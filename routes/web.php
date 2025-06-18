@@ -31,3 +31,4 @@ Route::middleware(['auth', 'role:pasien'])->prefix('pasien')->group(function () 
 require __DIR__ . '/auth.php';
 require __DIR__ . '/dokter.php';
 require __DIR__ . '/jadwalPeriksa.php';
+require __DIR__ . '/janjiPeriksa.php';
