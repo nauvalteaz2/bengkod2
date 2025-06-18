@@ -26,8 +26,22 @@ class User extends Authenticatable
         'no_ktp',
         'no_hp',
         'no_rm',
-        'poli',
+        'poli_id',
     ];
+    public function janjiPeriksa()
+    {
+        return $this->hasMany(JanjiPeriksa::class, 'id_pasien');
+    }
+
+    public function jadwalPeriksa()
+    {
+        return $this->hasMany(DetailPeriksa::class, 'id_dokter');
+    }
+
+    public function poli()
+    {
+        return $this->belongsTo(Poli::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.
